@@ -167,9 +167,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
         <div className="header-container">
           <div className="header-content">
             <div className="logo-section">
-              <div className="logo">
-                <img src="/logo.jpeg" alt="Meta Dev Logo" className="logo-image" />
-              </div>
+             
               <div className="company-info">
                 <h1>Meta Dev</h1>
                 {/* <p>Healthcare & Education Tech</p> */}

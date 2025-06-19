@@ -623,13 +623,7 @@ const ServicesSection: React.FC = () => {
         <div className="services-bg-pattern"></div>
         <div className="medical-grid-overlay"></div>
         
-        <div className="floating-medical-icons">
-          <Microscope className="floating-medical-icon" size={44} />
-          <Brain className="floating-medical-icon" size={40} />
-          <HeartPulse className="floating-medical-icon" size={46} />
-          <TestTube2 className="floating-medical-icon" size={42} />
-        </div>
-
+       
         <div className="services-container">
           <div className="section-header">
             <h2 className="section-title">Public Health Services</h2>
