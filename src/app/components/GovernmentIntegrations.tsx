@@ -25,7 +25,7 @@ const GovernmentIntegrations: React.FC = () => {
     {
       title: "Ayushman Bharat Digital Mission (ABDM)",
       icon: HeartPulse,
-      description: "Seamless integration with India's national digital health ecosystem",
+      description: "Seamless integration with India&apos;s national digital health ecosystem",
       features: [
         "ABHA (Health Account) creation & management",
         "Digital Health Record (DHR) linkage",
@@ -49,7 +49,7 @@ const GovernmentIntegrations: React.FC = () => {
     {
       title: "APAAR (Academic Account Registry)",
       icon: BookOpenText,
-      description: "Lifelong student ID integration for India's education ecosystem",
+      description: "Lifelong student ID integration for India&apos;s education ecosystem",
       features: [
         "Automated APAAR ID generation",
         "Academic record linking",
@@ -432,7 +432,7 @@ const GovernmentIntegrations: React.FC = () => {
               National Ecosystem Enablement
             </h2>
             <p className="section-subtitle">
-              Seamless integration with India's digital public infrastructure for health and education
+              Seamless integration with India&apos;s digital public infrastructure for health and education
             </p>
           </div>
 

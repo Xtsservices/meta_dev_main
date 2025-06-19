@@ -1,10 +1,10 @@
 // components/BrandsSection.tsx
 "use client";
 import React, { useState } from 'react';
-import { Heart, Stethoscope, Ambulance, Phone, Calendar, Brain, BookOpen, Users, ArrowRight, CheckCircle, ClipboardList, Pill, Shield, FileText, Package, Handshake, CreditCard, Activity, TrendingUp, Globe, Zap } from 'lucide-react';
+import { Heart, Stethoscope, Ambulance,Brain, Users, ArrowRight, CheckCircle, ClipboardList, Shield } from 'lucide-react';
 
 const BrandsSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('metahealth');
+  const [activeTab] = useState('metahealth');
 
   const brands = {
     metahealth: {

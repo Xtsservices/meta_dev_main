@@ -6,23 +6,19 @@ import {
   Globe, 
   Shield,
   Activity,
-  Zap,
   Users,
   BarChart3,
   ClipboardList,
   Map,
   HeartPulse,
-  Crosshair,
   TestTube2,
   ArrowRight,
-  CheckCircle,
   TrendingUp,
   Brain,
-  Microscope
 } from 'lucide-react';
 
 const ServicesSection: React.FC = () => {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [, setHoveredService] = useState<number | null>(null);
 
   const services = [
     {

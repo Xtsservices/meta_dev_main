@@ -1,7 +1,7 @@
 // components/HeroSection.tsx
 "use client";
 import React from 'react';
-import { Heart, ArrowRight, Zap, Target, Activity, Shield, Users, Plus, TrendingUp, Globe } from 'lucide-react';
+import { Heart, ArrowRight, Zap, Target, Users } from 'lucide-react';
 
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void;
