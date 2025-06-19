@@ -449,15 +449,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
         <div className="pulse-ring"></div>
         <div className="pulse-ring"></div>
         <div className="pulse-ring"></div>
-        
-        <div className="floating-icons">
-          <Heart className="floating-icon" size={48} />
-          <Activity className="floating-icon" size={52} />
-          <Shield className="floating-icon" size={44} />
-          <Plus className="floating-icon" size={40} />
-          <TrendingUp className="floating-icon" size={46} />
-          <Globe className="floating-icon" size={48} />
-        </div>
 
         <div className="medical-cross"></div>
 

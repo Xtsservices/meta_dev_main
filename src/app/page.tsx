@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection';
 import BrandsSection from './components/BrandsSection';
 import ServicesSection from './components/ServicesSection';
 import Footer from './components/Footer';
+import GovernmentIntegrations from './components/GovernmentIntegrations';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection scrollToSection={(sectionId) => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })} />
       <BrandsSection />
       <ServicesSection />
+      <GovernmentIntegrations />
       <Footer />
     </>
   );

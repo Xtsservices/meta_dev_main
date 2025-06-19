@@ -527,13 +527,7 @@ const BrandsSection: React.FC = () => {
       <section id="brands" className="brands-section">
         <div className="brands-bg-pattern"></div>
         <div className="medical-dots"></div>
-        
-        <div className="floating-medical-icons">
-          <Activity className="floating-medical-icon" size={40} />
-          <TrendingUp className="floating-medical-icon" size={36} />
-          <Globe className="floating-medical-icon" size={42} />
-          <Zap className="floating-medical-icon" size={38} />
-        </div>
+      
 
         <div className="brands-container">
           <div className="section-header">
