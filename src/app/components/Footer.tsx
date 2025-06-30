@@ -358,9 +358,7 @@ const services = [
               {/* Brand Section */}
               <div className="footer-brand">
                 <div className="brand-header">
-                  <div className="brand-logo">
-                    <span className="brand-logo-text">M</span>
-                  </div>
+                  
                   <div className="brand-info">
                     <h3>Meta Dev</h3>
                     <p>Healthcare & Education Tech</p>
