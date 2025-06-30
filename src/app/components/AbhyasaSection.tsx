@@ -1,26 +1,26 @@
-// components/HeroSection.tsx
+// components/AbhyasaSection.tsx
 "use client";
 import React from 'react';
-import { Heart, ArrowRight, Zap, Target, Users } from 'lucide-react';
+import { GraduationCap, BookOpen, Users, Shield, Award, ArrowRight, Database, Globe } from 'lucide-react';
 
-interface HeroSectionProps {
+interface AbhyasaSectionProps {
   scrollToSection: (sectionId: string) => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
+const AbhyasaSection: React.FC<AbhyasaSectionProps> = ({ scrollToSection }) => {
   return (
     <>
       <style jsx>{`
-        .hero-section {
+        .abhyasa-section {
           position: relative;
           min-height: 100vh;
-          // background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0369a1 100%);
+        //   background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0369a1 100%);
           overflow: hidden;
           display: flex;
           align-items: center;
         }
 
-        .hero-bg-pattern {
+        .abhyasa-bg-pattern {
           position: absolute;
           top: 0;
           left: 0;
@@ -30,16 +30,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
             radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
             radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
             linear-gradient(45deg, transparent 49%, rgba(255, 255, 255, 0.02) 50%, transparent 51%);
-          background-size: 100px 100px, 150px 150px, 20px 20px;
-          animation: patternMove 20s linear infinite;
+          background-size: 120px 120px, 180px 180px, 25px 25px;
+          animation: patternMove 25s linear infinite;
         }
 
         @keyframes patternMove {
           0% { transform: translate(0, 0); }
-          100% { transform: translate(20px, 20px); }
+          100% { transform: translate(25px, 25px); }
         }
 
-        .medical-grid {
+        .education-grid {
           position: absolute;
           top: 0;
           left: 0;
@@ -48,12 +48,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           background-image: 
             linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-          background-size: 50px 50px;
-          animation: gridPulse 4s ease-in-out infinite alternate;
+          background-size: 60px 60px;
+          animation: gridPulse 5s ease-in-out infinite alternate;
         }
 
         @keyframes gridPulse {
-          0% { opacity: 0.3; }
+          0% { opacity: 0.4; }
           100% { opacity: 0.1; }
         }
 
@@ -70,52 +70,52 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
         .floating-icon {
           position: absolute;
           color: rgba(59, 130, 246, 0.15);
-          animation: float 6s ease-in-out infinite;
+          animation: float 7s ease-in-out infinite;
         }
 
         .floating-icon:nth-child(1) {
-          top: 20%;
-          left: 10%;
+          top: 15%;
+          left: 8%;
           animation-delay: 0s;
         }
 
         .floating-icon:nth-child(2) {
-          top: 60%;
-          right: 15%;
-          animation-delay: 2s;
+          top: 65%;
+          right: 12%;
+          animation-delay: 2.5s;
         }
 
         .floating-icon:nth-child(3) {
-          bottom: 30%;
-          left: 20%;
-          animation-delay: 4s;
+          bottom: 25%;
+          left: 18%;
+          animation-delay: 5s;
         }
 
         .floating-icon:nth-child(4) {
-          top: 15%;
-          right: 30%;
-          animation-delay: 1s;
+          top: 20%;
+          right: 25%;
+          animation-delay: 1.5s;
         }
 
         .floating-icon:nth-child(5) {
-          bottom: 20%;
-          right: 10%;
-          animation-delay: 3s;
+          bottom: 15%;
+          right: 8%;
+          animation-delay: 3.5s;
         }
 
         .floating-icon:nth-child(6) {
-          top: 45%;
-          left: 5%;
-          animation-delay: 5s;
+          top: 50%;
+          left: 3%;
+          animation-delay: 6s;
         }
 
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
-          33% { transform: translateY(-20px) rotate(10deg); }
-          66% { transform: translateY(10px) rotate(-5deg); }
+          33% { transform: translateY(-25px) rotate(15deg); }
+          66% { transform: translateY(15px) rotate(-10deg); }
         }
 
-        .hero-container {
+        .abhyasa-container {
           position: relative;
           z-index: 2;
           max-width: 1400px;
@@ -124,14 +124,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           width: 100%;
         }
 
-        .hero-content {
+        .abhyasa-content {
           text-align: center;
           color: white;
           max-width: 900px;
           margin: 0 auto;
         }
 
-        .hero-badges {
+        .abhyasa-badges {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
@@ -140,7 +140,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           animation: slideUp 1s ease-out 0.2s both;
         }
 
-        .hero-badge {
+        .abhyasa-badge {
           display: flex;
           align-items: center;
           gap: 0.5rem;
@@ -154,35 +154,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           transition: all 0.3s ease;
         }
 
-        .hero-badge:hover {
+        .abhyasa-badge:hover {
           background: rgba(59, 130, 246, 0.2);
           border-color: rgba(59, 130, 246, 0.4);
           transform: translateY(-2px);
         }
 
-        .hero-title {
+        .abhyasa-title {
           font-size: clamp(2.5rem, 5vw, 4rem);
           font-weight: 800;
           line-height: 1.1;
           margin-bottom: 1.5rem;
-          background: linear-gradient( #3b82f6 100%);
+          background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           animation: slideUp 1s ease-out 0.4s both;
         }
 
-        .hero-subtitle {
+        .abhyasa-subtitle {
           font-size: clamp(1.25rem, 2.5vw, 1.5rem);
           font-weight: 600;
-          color: #3b82f6 ;
+          color: #3b82f6;
           margin-bottom: 1rem;
           animation: slideUp 1s ease-out 0.6s both;
         }
 
-        .hero-description {
+        .abhyasa-description {
           font-size: clamp(1rem, 1.5vw, 1.125rem);
-          color: #3b82f6 ;
+          color: #3b82f6;
           line-height: 1.6;
           margin-bottom: 3rem;
           max-width: 700px;
@@ -191,7 +191,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           animation: slideUp 1s ease-out 0.8s both;
         }
 
-        .hero-buttons {
+        .abhyasa-buttons {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
@@ -200,7 +200,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           animation: slideUp 1s ease-out 1s both;
         }
 
-        .hero-button-primary {
+        .abhyasa-button-primary {
           display: flex;
           align-items: center;
           gap: 0.75rem;
@@ -217,7 +217,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           overflow: hidden;
         }
 
-        .hero-button-primary::before {
+        .abhyasa-button-primary::before {
           content: '';
           position: absolute;
           top: 0;
@@ -228,20 +228,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           transition: left 0.5s;
         }
 
-        .hero-button-primary:hover::before {
+        .abhyasa-button-primary:hover::before {
           left: 100%;
         }
 
-        .hero-button-primary:hover {
+        .abhyasa-button-primary:hover {
           transform: translateY(-3px);
           box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.4);
         }
 
-        .hero-button-secondary {
+        .abhyasa-button-secondary {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          
           background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
           color: white;
           border: 2px solid rgba(255, 255, 255, 0.3);
@@ -254,20 +253,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           backdrop-filter: blur(10px);
         }
 
-        .hero-button-secondary:hover {
+        .abhyasa-button-secondary:hover {
           background: rgba(255, 255, 255, 0.1);
           border-color: rgba(255, 255, 255, 0.5);
           transform: translateY(-3px);
         }
 
-        .hero-stats {
+        .abhyasa-stats {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 2rem;
           animation: slideUp 1s ease-out 1.2s both;
         }
 
-        .hero-stat {
+        .abhyasa-stat {
           text-align: center;
           padding: 1.5rem;
           background: rgba(255, 255, 255, 0.05);
@@ -279,7 +278,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           overflow: hidden;
         }
 
-        .hero-stat::before {
+        .abhyasa-stat::before {
           content: '';
           position: absolute;
           top: 0;
@@ -291,17 +290,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           transition: transform 0.3s ease;
         }
 
-        .hero-stat:hover::before {
+        .abhyasa-stat:hover::before {
           transform: scaleX(1);
         }
 
-        .hero-stat:hover {
+        .abhyasa-stat:hover {
           background: rgba(255, 255, 255, 0.1);
           transform: translateY(-5px);
           border-color: rgba(59, 130, 246, 0.3);
         }
 
-        .hero-stat-number {
+        .abhyasa-stat-number {
           display: block;
           font-size: 2.5rem;
           font-weight: 800;
@@ -313,7 +312,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           line-height: 1;
         }
 
-        .hero-stat-label {
+        .abhyasa-stat-label {
           font-size: 0.875rem;
           color: #cbd5e1;
           font-weight: 500;
@@ -321,33 +320,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           letter-spacing: 0.05em;
         }
 
-        .medical-cross {
+        .education-symbol {
           position: absolute;
-          top: 10%;
-          right: 10%;
-          width: 60px;
-          height: 60px;
+          top: 8%;
+          right: 8%;
+          width: 80px;
+          height: 80px;
           opacity: 0.1;
-          animation: spin 20s linear infinite;
+          animation: spin 25s linear infinite;
         }
 
-        .medical-cross::before,
-        .medical-cross::after {
+        .education-symbol::before {
           content: '';
           position: absolute;
-          background: #3b82f6;
-        }
-
-        .medical-cross::before {
           width: 100%;
-          height: 20%;
-          top: 40%;
-        }
-
-        .medical-cross::after {
           height: 100%;
-          width: 20%;
-          left: 40%;
+          background: #3b82f6;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
 
         @keyframes spin {
@@ -371,23 +360,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 300px;
-          height: 300px;
+          width: 320px;
+          height: 320px;
           border: 2px solid rgba(59, 130, 246, 0.3);
           border-radius: 50%;
-          animation: pulse 3s ease-in-out infinite;
+          animation: pulse 4s ease-in-out infinite;
         }
 
         .pulse-ring:nth-child(2) {
-          width: 400px;
-          height: 400px;
-          animation-delay: 1s;
+          width: 420px;
+          height: 420px;
+          animation-delay: 1.5s;
         }
 
         .pulse-ring:nth-child(3) {
-          width: 500px;
-          height: 500px;
-          animation-delay: 2s;
+          width: 520px;
+          height: 520px;
+          animation-delay: 3s;
         }
 
         @keyframes pulse {
@@ -406,115 +395,118 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
         }
 
         @media (max-width: 768px) {
-          .hero-container {
+          .abhyasa-container {
             padding: 1rem;
           }
           
-          .hero-badges {
+          .abhyasa-badges {
             flex-direction: column;
             align-items: center;
           }
           
-          .hero-buttons {
+          .abhyasa-buttons {
             flex-direction: column;
           }
           
-          .hero-button-primary,
-          .hero-button-secondary {
+          .abhyasa-button-primary,
+          .abhyasa-button-secondary {
             width: 100%;
             justify-content: center;
           }
           
-          .hero-stats {
+          .abhyasa-stats {
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-stats {
+          .abhyasa-stats {
             grid-template-columns: 1fr;
           }
           
-          .hero-stat-number {
+          .abhyasa-stat-number {
             font-size: 2rem;
           }
         }
       `}</style>
 
-      <section id="home" className="hero-section">
-        <div className="hero-bg-pattern"></div>
-        <div className="medical-grid"></div>
+      <section id="abhyasa" className="abhyasa-section">
+        <div className="abhyasa-bg-pattern"></div>
+        <div className="education-grid"></div>
+        
+       
         
         <div className="pulse-ring"></div>
         <div className="pulse-ring"></div>
         <div className="pulse-ring"></div>
 
-        <div className="medical-cross"></div>
+        <div className="education-symbol"></div>
 
-        <div className="hero-container">
-          <div className="hero-content">
-            <div className="hero-badges">
-              <div className="hero-badge">
-                <Heart size={18} />
-                <span>Public Health Intelligence</span>
+        <div className="abhyasa-container">
+          <div className="abhyasa-content">
+            <div className="abhyasa-badges">
+              <div className="abhyasa-badge">
+                <GraduationCap size={18} />
+                <span>APAAR Integration</span>
               </div>
-              <div className="hero-badge">
-                <Users size={18} />
-                <span>Global Disease Surveillance</span>
+              <div className="abhyasa-badge">
+                <Database size={18} />
+                <span>Academic Registry</span>
               </div>
-              <div className="hero-badge">
-                <Zap size={18} />
-                <span>Evidence-Based Interventions</span>
+              <div className="abhyasa-badge">
+                <Shield size={18} />
+                <span>Secure Credentials</span>
               </div>
             </div>
 
-            <h1 className="hero-title">
-              Transforming Global Health Through Data Integration
+            <h1 className="abhyasa-title">
+              Abhyasa: Revolutionizing Digital Education
             </h1>
             
-            <p className="hero-subtitle">
-              Connecting public health agencies, researchers, and policymakers worldwide
+            <p className="abhyasa-subtitle">
+              Seamlessly integrated with APAAR for lifelong academic identity
             </p>
             
-            <p className="hero-description">
-              Our advanced platform aggregates and analyzes health data from CDC, NHS, WHO and other leading agencies
-              to provide actionable insights for improving population health outcomes and preventing disease outbreaks.
+            <p className="abhyasa-description">
+              Our advanced education platform integrates with India's APAAR (Automated Permanent Academic Account Registry) 
+              system, enabling seamless APAAR ID generation, automatic academic record linking, and secure credential storage 
+              under the National Academic Depository for enhanced student mobility and reduced document fraud.
             </p>
 
-            <div className="hero-buttons">
+            <div className="abhyasa-buttons">
               <button
-                className="hero-button-primary"
-                onClick={() => scrollToSection('brands')}
+                className="abhyasa-button-primary"
+                onClick={() => scrollToSection('features')}
               >
-                Explore Health Solutions
+                Explore Education Solutions
                 <ArrowRight size={20} />
               </button>
               <button
-                className="hero-button-secondary"
+                className="abhyasa-button-secondary"
                 onClick={() => scrollToSection('contact')}
               >
-                Contact Health Team
-                <Target size={20} />
+                Get Started Today
+                <BookOpen size={20} />
               </button>
             </div>
 
-            <div className="hero-stats">
-              <div className="hero-stat">
-                <span className="hero-stat-number">50+</span>
-                <span className="hero-stat-label">Countries Covered</span>
+            <div className="abhyasa-stats">
+              <div className="abhyasa-stat">
+                <span className="abhyasa-stat-number">10M+</span>
+                <span className="abhyasa-stat-label">Student Records</span>
               </div>
-              <div className="hero-stat">
-                <span className="hero-stat-number">100M+</span>
-                <span className="hero-stat-label">Health Records</span>
+              <div className="abhyasa-stat">
+                <span className="abhyasa-stat-number">500+</span>
+                <span className="abhyasa-stat-label">Institutions</span>
               </div>
-              <div className="hero-stat">
-                <span className="hero-stat-number">30+</span>
-                <span className="hero-stat-label">Disease Indicators</span>
+              <div className="abhyasa-stat">
+                <span className="abhyasa-stat-number">100%</span>
+                <span className="abhyasa-stat-label">APAAR Compliant</span>
               </div>
-              <div className="hero-stat">
-                <span className="hero-stat-number">24/7</span>
-                <span className="hero-stat-label">Outbreak Monitoring</span>
+              <div className="abhyasa-stat">
+                <span className="abhyasa-stat-number">24/7</span>
+                <span className="abhyasa-stat-label">System Availability</span>
               </div>
             </div>
           </div>
@@ -524,4 +516,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
   );
 };
 
-export default HeroSection;
+export default AbhyasaSection;

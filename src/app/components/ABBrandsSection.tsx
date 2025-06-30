@@ -1,61 +1,61 @@
-// components/BrandsSection.tsx
+// components/ABBrandsSection.tsx
 "use client";
 import React, { useState } from 'react';
-import { Heart, Stethoscope, Ambulance,Brain, Users, ArrowRight, CheckCircle, ClipboardList, Shield } from 'lucide-react';
+import { Heart, Stethoscope, GraduationCap, Brain, Users, ArrowRight, CheckCircle, ClipboardList, Shield, BookOpen, UserCheck, Database, Lock, FileText, Award } from 'lucide-react';
 
-const BrandsSection: React.FC = () => {
-  const [activeTab] = useState('metahealth');
+const ABBrandsSection: React.FC = () => {
+  const [activeTab] = useState('abhyasa');
 
   const brands = {
-    metahealth: {
-      name: 'Global Health Connect',
-      tagline: 'Unified Public Health Intelligence Platform',
-      description: 'A comprehensive global health platform integrating data from CDC, NHS, WHO and other agencies to provide real-time disease surveillance, health profiling, and evidence-based intervention planning.',
-      icon: Heart,
+    abhyasa: {
+      name: 'ABHYASA Platform',
+      tagline: 'National Ecosystem Integration Platform',
+      description: 'A comprehensive digital platform seamlessly integrated with Ayushman Bharat Digital Mission (ABDM) and APAAR systems, empowering healthcare and education through government-approved digital infrastructure.',
+      icon: Brain,
       color: 'from-blue-500 to-teal-600',
       features: [
         {
-          icon: Stethoscope,
-          title: 'Disease Surveillance',
-          description: 'Real-time monitoring of disease prevalence including COVID-19, malaria, tuberculosis and emerging threats with predictive analytics'
+          icon: Heart,
+          title: 'ABDM Integration',
+          description: 'Seamless integration with Ayushman Bharat Digital Mission for unified digital health ecosystem and ABHA management'
         },
         {
-          icon: ClipboardList,
-          title: 'Health Profiling',
-          description: 'Comprehensive population health assessments identifying risk factors, healthcare gaps and vulnerable groups'
+          icon: GraduationCap,
+          title: 'APAAR Integration',
+          description: 'Direct integration with Automated Permanent Academic Account Registry for lifelong student ID and academic records'
         },
         {
-          icon: Users,
-          title: 'Community Health',
-          description: 'Targeted community interventions based on demographic and epidemiological data'
+          icon: UserCheck,
+          title: 'Identity Management',
+          description: 'Secure ABHA and APAAR ID generation, management, and linking across health and education platforms'
         },
         {
-          icon: Shield,
-          title: 'Preventive Care',
-          description: 'Early detection systems and preventive measures to reduce disease burden'
+          icon: Database,
+          title: 'Digital Records',
+          description: 'Real-time digital health records and academic credentials storage with National Academic Depository support'
         },
         {
-          icon: Brain,
-          title: 'Clinical Intelligence',
-          description: 'AI-powered diagnostic support and treatment recommendations for healthcare providers'
+          icon: Lock,
+          title: 'Privacy & Compliance',
+          description: 'Government-approved protocols with encrypted APIs ensuring complete data privacy and legal compliance'
         },
         {
-          icon: Ambulance,
-          title: 'Emergency Response',
-          description: 'Integrated emergency coordination with ambulance dispatch and hospital capacity monitoring'
+          icon: FileText,
+          title: 'Interoperability',
+          description: 'Cross-platform data sharing with consent using Health Information Exchange and Digital Public Infrastructure'
         }
       ],
       services: [
-        'Global Disease Surveillance',
-        'Population Health Analytics',
-        'Risk Factor Identification',
-        'Healthcare Resource Allocation',
-        'Public Health Intervention Planning',
-        'Environmental Health Monitoring',
-        'Vulnerable Group Protection',
-        'Health Equity Assessments',
-        'Outbreak Prediction Models',
-        'Interagency Data Integration'
+        'ABHA Account Creation & Management',
+        'Digital Health Record Linkage',
+        'APAAR ID Generation & Linking',
+        'Academic Record Management',
+        'Health Information Exchange (HIE)',
+        'National Academic Depository',
+        'Hospital & Clinic Onboarding',
+        'Skills Certification Tracking',
+        'Secure Data Sharing with Consent',
+        'Government Compliance Framework'
       ]
     }
   };
@@ -86,13 +86,13 @@ const BrandsSection: React.FC = () => {
           background-size: 200px 200px, 300px 300px, 40px 40px;
         }
 
-        .medical-dots {
+        .government-pattern {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+          background-image: radial-gradient(circle, rgba(251, 146, 60, 0.05) 1px, transparent 1px);
           background-size: 30px 30px;
           opacity: 0.3;
         }
@@ -125,7 +125,7 @@ const BrandsSection: React.FC = () => {
         .section-subtitle {
           font-size: clamp(1rem, 1.5vw, 1.25rem);
           color: #64748b;
-          max-width: 600px;
+          max-width: 700px;
           margin: 0 auto;
           line-height: 1.6;
         }
@@ -409,7 +409,7 @@ const BrandsSection: React.FC = () => {
           box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.5);
         }
 
-        .floating-medical-icons {
+        .floating-icons {
           position: absolute;
           top: 0;
           left: 0;
@@ -419,37 +419,37 @@ const BrandsSection: React.FC = () => {
           z-index: 1;
         }
 
-        .floating-medical-icon {
+        .floating-icon {
           position: absolute;
           color: rgba(59, 130, 246, 0.08);
-          animation: floatMedical 8s ease-in-out infinite;
+          animation: floatIcon 8s ease-in-out infinite;
         }
 
-        .floating-medical-icon:nth-child(1) {
+        .floating-icon:nth-child(1) {
           top: 10%;
           left: 5%;
           animation-delay: 0s;
         }
 
-        .floating-medical-icon:nth-child(2) {
+        .floating-icon:nth-child(2) {
           top: 20%;
           right: 10%;
           animation-delay: 2s;
         }
 
-        .floating-medical-icon:nth-child(3) {
+        .floating-icon:nth-child(3) {
           bottom: 30%;
           left: 15%;
           animation-delay: 4s;
         }
 
-        .floating-medical-icon:nth-child(4) {
+        .floating-icon:nth-child(4) {
           bottom: 20%;
           right: 5%;
           animation-delay: 6s;
         }
 
-        @keyframes floatMedical {
+        @keyframes floatIcon {
           0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
           25% { transform: translateY(-15px) rotate(5deg); opacity: 0.6; }
           50% { transform: translateY(-5px) rotate(-3deg); opacity: 0.8; }
@@ -467,6 +467,38 @@ const BrandsSection: React.FC = () => {
           }
         }
 
+        .integration-badges {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 3rem;
+          flex-wrap: wrap;
+        }
+
+        .integration-badge {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          background: rgba(59, 130, 246, 0.1);
+          border: 1px solid rgba(59, 130, 246, 0.2);
+          border-radius: 50px;
+          padding: 0.75rem 1.5rem;
+          font-weight: 600;
+          color: #1d4ed8;
+          font-size: 0.875rem;
+          transition: all 0.3s ease;
+        }
+
+        .integration-badge:hover {
+          background: rgba(59, 130, 246, 0.15);
+          transform: translateY(-2px);
+        }
+
+        .integration-icon {
+          width: 20px;
+          height: 20px;
+        }
+
         @media (max-width: 1024px) {
           .brand-content {
             grid-template-columns: 1fr;
@@ -475,6 +507,10 @@ const BrandsSection: React.FC = () => {
 
           .brand-features {
             grid-template-columns: 1fr;
+          }
+
+          .integration-badges {
+            gap: 1rem;
           }
         }
 
@@ -521,20 +557,39 @@ const BrandsSection: React.FC = () => {
             flex-direction: column;
             text-align: center;
           }
+
+          .integration-badges {
+            flex-direction: column;
+            align-items: center;
+          }
         }
       `}</style>
 
       <section id="brands" className="brands-section">
         <div className="brands-bg-pattern"></div>
-        <div className="medical-dots"></div>
-      
-
+        <div className="government-pattern"></div>
+        
         <div className="brands-container">
           <div className="section-header">
-            <h2 className="section-title">Global Health Services</h2>
+            <h2 className="section-title">National Ecosystem Integration</h2>
             <p className="section-subtitle">
-              Integrating data from worldwide health agencies for comprehensive public health solutions
+              Empowering healthcare and education through seamless integration with India's Digital Public Infrastructure
             </p>
+            
+            <div className="integration-badges">
+              <div className="integration-badge">
+                <Heart className="integration-icon" />
+                <span>Ayushman Bharat Digital Mission</span>
+              </div>
+              <div className="integration-badge">
+                <GraduationCap className="integration-icon" />
+                <span>APAAR Integration</span>
+              </div>
+              <div className="integration-badge">
+                <Shield className="integration-icon" />
+                <span>Government Approved</span>
+              </div>
+            </div>
           </div>
 
           <div className="brand-content">
@@ -554,7 +609,7 @@ const BrandsSection: React.FC = () => {
               </p>
 
               <div className="brand-services">
-                <h4 className="services-title">Core Capabilities</h4>
+                <h4 className="services-title">Core Integration Capabilities</h4>
                 <div className="services-list">
                   {currentBrand.services.map((service, index) => (
                     <div key={index} className="service-item">
@@ -586,12 +641,12 @@ const BrandsSection: React.FC = () => {
 
           <div className="cta-section">
             <div className="cta-content">
-              <h3 className="cta-title">Ready to Enhance Public Health Outcomes?</h3>
+              <h3 className="cta-title">Ready to Transform Digital Health & Education?</h3>
               <p className="cta-description">
-                Join governments and health organizations using our platform to make data-driven public health decisions
+                Join institutions leveraging ABHYASA platform for seamless government ecosystem integration and enhanced service delivery
               </p>
               <button className="cta-button">
-                Request Health Data Demo
+                Request Integration Demo
                 <ArrowRight size={20} />
               </button>
             </div>
@@ -602,4 +657,4 @@ const BrandsSection: React.FC = () => {
   );
 };
 
-export default BrandsSection;
+export default ABBrandsSection;

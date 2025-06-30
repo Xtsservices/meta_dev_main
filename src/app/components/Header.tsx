@@ -1,9 +1,7 @@
-// components/Header.tsx
-
 "use client";
 
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 interface HeaderProps {
   scrollToSection: (sectionId: string) => void;
@@ -13,12 +11,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', id: 'home' },
-    { label: 'Our Brands', id: 'brands' },
-    { label: 'Services', id: 'services' },
-    { label: 'Features', id: 'features' },
-    { label: 'About', id: 'about' },
-    { label: 'Contact', id: 'contact' }
+    { label: "Home", id: "home" },
+    { label: "Our Brands", id: "brands" },
+    { label: "Services", id: "services" },
+    { label: "Features", id: "features" },
+    { label: "About", id: "about" },
+    { label: "Contact", id: "contact" },
   ];
 
   const handleNavClick = (id: string) => {
@@ -34,23 +32,25 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           top: 0;
           left: 0;
           right: 0;
-          background: rgba(255, 255, 255, 0.95);
+          background: #0a1624;
           backdrop-filter: blur(10px);
           border-bottom: 1px solid #e5e7eb;
           z-index: 50;
+          height: 6rem;
         }
 
         .header-container {
           max-width: 1280px;
           margin: 0 auto;
           padding: 0 1rem;
+          height: 100%;
         }
 
         .header-content {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          height: 4rem;
+          height: 100%;
         }
 
         .logo-section {
@@ -75,32 +75,51 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           font-size: 1.125rem;
         }
 
+        .company-info {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
+
         .company-info h1 {
           font-size: 1.25rem;
           font-weight: bold;
-          color: #111827;
+          color: white;
           margin: 0;
         }
 
         .company-info p {
           font-size: 0.75rem;
-          color: #6b7280;
+          color: white;
           margin: 0;
+        }
+
+        .company-info img {
+          height: 80px;
+          width: auto;
+          object-fit: contain;
+        }
+
+        .nav-section {
+          display: flex;
+          align-items: center;
+          height: 100%;
         }
 
         .desktop-nav {
           display: none;
           gap: 2rem;
+          align-items: center;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           .desktop-nav {
             display: flex;
           }
         }
 
         .nav-item {
-          color: #374151;
+          color: white;
           text-decoration: none;
           font-weight: 500;
           transition: color 0.2s;
@@ -108,18 +127,21 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
         }
 
         .nav-item:hover {
-          color: #2563eb;
+          color: #60a5fa;
         }
 
         .mobile-menu-button {
           display: block;
           background: none;
           border: none;
-          color: #374151;
+          color: white;
           cursor: pointer;
+          height: 100%;
+          display: flex;
+          align-items: center;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           .mobile-menu-button {
             display: none;
           }
@@ -130,9 +152,9 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           top: 100%;
           left: 0;
           right: 0;
-          background: white;
-          border-bottom: 1px solid #e5e7eb;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          background: #0a1624;
+          border-bottom: 1px solid #374151;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
 
         .mobile-menu.hidden {
@@ -147,11 +169,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
 
         .mobile-nav-item {
           padding: 0.75rem 0;
-          color: #374151;
+          color: white;
           text-decoration: none;
           font-weight: 500;
-          border-bottom: 1px solid #f3f4f6;
+          border-bottom: 1px solid #374151;
           cursor: pointer;
+          transition: color 0.2s;
         }
 
         .mobile-nav-item:last-child {
@@ -159,42 +182,77 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
         }
 
         .mobile-nav-item:hover {
-          color: #2563eb;
+          color: #60a5fa;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 767px) {
+          .header {
+            height: 5rem;
+          }
+          
+          .company-info img {
+            height: 60px;
+          }
+          
+          .header-container {
+            padding: 0 0.5rem;
+          }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .header {
+            height: 6rem;
+          }
+          
+          .company-info img {
+            height: 70px;
+          }
+          
+          .mobile-menu-button {
+            display: flex;
+          }
+          
+          .desktop-nav {
+            display: none;
+          }
         }
       `}</style>
 
       <header className="header">
         <div className="header-container">
           <div className="header-content">
-            <div className="logo-section">
-             
-              <div className="company-info">
-                <h1>Meta Dev</h1>
-                {/* <p>Healthcare & Education Tech</p> */}
-              </div>
+            <div className="company-info">
+              <img
+                src="/logo.jpg"
+                alt="Meta Dev Logo"
+              />
             </div>
-            
-            <nav className="desktop-nav">
-              {navItems.map((item) => (
-                <span
-                  key={item.id}
-                  className="nav-item"
-                  onClick={() => handleNavClick(item.id)}
-                >
-                  {item.label}
-                </span>
-              ))}
-            </nav>
 
-            <button
-              className="mobile-menu-button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="nav-section">
+              <nav className="desktop-nav">
+                {navItems.map((item) => (
+                  <span
+                    key={item.id}
+                    className="nav-item"
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    {item.label}
+                  </span>
+                ))}
+              </nav>
+
+              <button
+                className="mobile-menu-button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
-          <div className={`mobile-menu ${!isMenuOpen ? 'hidden' : ''}`}>
+          <div className={`mobile-menu ${!isMenuOpen ? "hidden" : ""}`}>
             <nav className="mobile-nav">
               {navItems.map((item) => (
                 <span

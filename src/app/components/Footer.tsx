@@ -27,10 +27,10 @@ const services = [
 ];
 
   const contact = [
-    { icon: Mail, label: 'info@metadev.com', href: 'mailto:info@metadev.com' },
-    { icon: Phone, label: '+91 9876543210', href: 'tel:+919876543210' },
-    { icon: MapPin, label: 'Hyderabad, Telangana, India', href: '#location' },
-    { icon: Globe, label: 'www.metadev.com', href: 'https://metadev.com' }
+    { icon: Mail, label: 'info@metadev.in', href: 'mailto:info@metadev.com' },
+    { icon: Phone, label: '+91 9559559143', href: 'tel:+919559559143' },
+    // { icon: MapPin, label: 'Hyderabad, Telangana, India', href: '#location' },
+    { icon: Globe, label: 'metadev.in', href: 'https://metadev.in' }
   ];
 
   const socialLinks = [
