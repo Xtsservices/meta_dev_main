@@ -3,48 +3,108 @@
 "use client";
 
 import React from 'react';
-import { Heart, GraduationCap, Mail, Phone, MapPin, Globe, Twitter, Linkedin, Github, Facebook } from 'lucide-react';
+import { Heart, GraduationCap, Mail, Phone, Globe } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const quickLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Brands', href: '#brands' },
-    { label: 'Services', href: '#services' },
-    { label: 'Contact', href: '#contact' },
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms of Service', href: '#terms' }
+  const navItems = [
+    { label: "Home", id: "home" },
+    { 
+      label: "Our Brands", 
+      id: "services",
+      subItems: [
+        { label: "MetaHealth", id: "metahealth" },
+        { label: "Abhyasa", id: "abhyasa" }
+      ]
+    },
+    // { label: "Our Brands", id: "brands" },
+    { label: "Team", id: "team" },
+    { label: "About", id: "about" },
+    { label: "Contact", id: "contact" },
   ];
-
-const services = [
-    { label: 'Healthcare App Development', href: '#healthcare' },
-    { label: 'Disease Surveillance', href: '#education' },
-    { label: 'Health Profiling', href: '#mobile' },
-    { label: 'Geospatial Health Mapping', href: '#web' },
-    { label: 'Chronic Disease Management', href: '#ai' },
-    { label: 'Environmental Health', href: '#cloud' }
-];
 
   const contact = [
     { icon: Mail, label: 'info@metadev.in', href: 'mailto:info@metadev.com' },
     { icon: Phone, label: '+91 9559559143', href: 'tel:+919559559143' },
-    // { icon: MapPin, label: 'Hyderabad, Telangana, India', href: '#location' },
     { icon: Globe, label: 'metadev.in', href: 'https://metadev.in' }
   ];
 
-  const socialLinks = [
-    { icon: Twitter, href: 'https://twitter.com/metadev' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/metadev' },
-    { icon: Github, href: 'https://github.com/metadev' },
-    { icon: Facebook, href: 'https://facebook.com/metadev' }
-  ];
+  const handleNavClick = (id: string) => {
+    if (id === "metahealth" || id === "abhyasa") {
+      if (pathname === `/${id}`) {
+        document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`/components/${id}#services`);
+      }
+    } else if (id === "home") {
+      if (pathname === "/") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      } else {
+        router.push("/");
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
+    } else if (id === "brands") {
+      if (pathname === "/") {
+        const brandsSection = document.getElementById("brands-section");
+        if (brandsSection) {
+          brandsSection.scrollIntoView({ 
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      } else {
+        router.push("/#brands-section");
+        setTimeout(() => {
+          const brandsSection = document.getElementById("brands-section");
+          if (brandsSection) {
+            brandsSection.scrollIntoView({ 
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }, 100);
+      }
+    } else {
+      if (pathname === "/") {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ 
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      } else {
+        router.push(`/#${id}`);
+        setTimeout(() => {
+          const section = document.getElementById(id);
+          if (section) {
+            section.scrollIntoView({ 
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }, 100);
+      }
+    }
+  };
 
   return (
     <>
       <style jsx>{`
         .footer {
-          background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+          background: #0a1624;
           color: white;
           position: relative;
           overflow: hidden;
@@ -58,8 +118,8 @@ const services = [
           right: 0;
           bottom: 0;
           background-image: 
-            radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            radial-gradient(circle at 20% 20%, rgba(93, 224, 230, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(0, 74, 173, 0.2) 0%, transparent 50%);
           pointer-events: none;
         }
 
@@ -73,12 +133,12 @@ const services = [
 
         .footer-main {
           padding: 4rem 0 2rem;
-          border-bottom: 1px solid #374151;
+          border-bottom: 1px solid rgba(93, 224, 230, 0.2);
         }
 
         .footer-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr;
           gap: 3rem;
         }
 
@@ -110,7 +170,7 @@ const services = [
         .brand-logo {
           width: 3rem;
           height: 3rem;
-          background: linear-gradient(135deg, #2563eb, #9333ea);
+          background: linear-gradient(135deg, #5de0e6, #004aad);
           border-radius: 0.75rem;
           display: flex;
           align-items: center;
@@ -127,17 +187,20 @@ const services = [
           font-size: 1.5rem;
           font-weight: bold;
           margin: 0 0 0.25rem 0;
+          background: linear-gradient(135deg, #5de0e6, #ffffff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .brand-info p {
-          color: #9ca3af;
+          color: #a0d2eb;
           font-size: 0.875rem;
           margin: 0;
         }
 
         .brand-description {
           line-height: 1.7;
-          color: #d1d5db;
+          color: #c3e4ff;
           margin-bottom: 2rem;
         }
 
@@ -151,12 +214,12 @@ const services = [
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #d1d5db;
+          color: #c3e4ff;
           font-size: 0.875rem;
         }
 
         .highlight-icon {
-          color: #10b981;
+          color: #5de0e6;
         }
 
         .social-links {
@@ -167,18 +230,18 @@ const services = [
         .social-link {
           width: 2.5rem;
           height: 2.5rem;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(93, 224, 230, 0.1);
           border-radius: 0.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #d1d5db;
+          color: #c3e4ff;
           transition: all 0.2s;
           text-decoration: none;
         }
 
         .social-link:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(93, 224, 230, 0.2);
           color: white;
           transform: translateY(-2px);
         }
@@ -187,7 +250,7 @@ const services = [
           font-size: 1.125rem;
           font-weight: 600;
           margin-bottom: 1.5rem;
-          color: white;
+          color: #5de0e6;
         }
 
         .footer-links {
@@ -201,14 +264,34 @@ const services = [
         }
 
         .footer-link a {
-          color: #d1d5db;
+          color: #c3e4ff;
           text-decoration: none;
           transition: color 0.2s;
           cursor: pointer;
         }
 
         .footer-link a:hover {
-          color: #3b82f6;
+          color: #5de0e6;
+        }
+
+        .footer-submenu {
+          padding-left: 1rem;
+          margin-top: 0.5rem;
+        }
+
+        .footer-submenu-item {
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-submenu-item a {
+          color: #a0d2eb;
+          font-size: 0.875rem;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .footer-submenu-item a:hover {
+          color: #5de0e6;
         }
 
         .contact-item {
@@ -216,29 +299,29 @@ const services = [
           align-items: center;
           gap: 0.75rem;
           margin-bottom: 1rem;
-          color: #d1d5db;
+          color: #c3e4ff;
         }
 
         .contact-icon {
           width: 2rem;
           height: 2rem;
-          background: rgba(59, 130, 246, 0.2);
+          background: rgba(93, 224, 230, 0.2);
           border-radius: 0.375rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #3b82f6;
+          color: #5de0e6;
           flex-shrink: 0;
         }
 
         .contact-item a {
-          color: #d1d5db;
+          color: #c3e4ff;
           text-decoration: none;
           transition: color 0.2s;
         }
 
         .contact-item a:hover {
-          color: #3b82f6;
+          color: #5de0e6;
         }
 
         .footer-bottom {
@@ -262,7 +345,7 @@ const services = [
         }
 
         .copyright {
-          color: #9ca3af;
+          color: #a0d2eb;
           font-size: 0.875rem;
         }
 
@@ -279,7 +362,7 @@ const services = [
         }
 
         .footer-bottom-link {
-          color: #9ca3af;
+          color: #a0d2eb;
           text-decoration: none;
           font-size: 0.875rem;
           transition: color 0.2s;
@@ -287,67 +370,7 @@ const services = [
         }
 
         .footer-bottom-link:hover {
-          color: #3b82f6;
-        }
-
-        .newsletter-section {
-          background: rgba(59, 130, 246, 0.1);
-          border-radius: 0.75rem;
-          padding: 1.5rem;
-          margin-bottom: 2rem;
-        }
-
-        .newsletter-title {
-          font-size: 1rem;
-          font-weight: 600;
-          margin-bottom: 0.5rem;
-          color: white;
-        }
-
-        .newsletter-description {
-          color: #d1d5db;
-          font-size: 0.875rem;
-          margin-bottom: 1rem;
-        }
-
-        .newsletter-form {
-          display: flex;
-          gap: 0.5rem;
-        }
-
-        .newsletter-input {
-          flex: 1;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 0.375rem;
-          padding: 0.5rem 0.75rem;
-          color: white;
-          font-size: 0.875rem;
-        }
-
-        .newsletter-input::placeholder {
-          color: #9ca3af;
-        }
-
-        .newsletter-input:focus {
-          outline: none;
-          border-color: #3b82f6;
-        }
-
-        .newsletter-button {
-          background: #3b82f6;
-          color: white;
-          border: none;
-          border-radius: 0.375rem;
-          padding: 0.5rem 1rem;
-          font-size: 0.875rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: background 0.2s;
-        }
-
-        .newsletter-button:hover {
-          background: #2563eb;
+          color: #5de0e6;
         }
       `}</style>
 
@@ -358,7 +381,6 @@ const services = [
               {/* Brand Section */}
               <div className="footer-brand">
                 <div className="brand-header">
-                  
                   <div className="brand-info">
                     <h3>Meta Dev</h3>
                     <p>Healthcare & Education Tech</p>
@@ -381,58 +403,24 @@ const services = [
                   </div>
                 </div>
 
-                <div className="newsletter-section">
-                  <h4 className="newsletter-title">Stay Updated</h4>
-                  <p className="newsletter-description">
-                    Get the latest updates on our products and services
-                  </p>
-                  <div className="newsletter-form">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email"
-                      className="newsletter-input"
-                    />
-                    <button className="newsletter-button">Subscribe</button>
-                  </div>
-                </div>
-
-                <div className="social-links">
-                  {socialLinks.map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <a 
-                        key={index}
-                        href={social.href}
-                        className="social-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconComponent size={18} />
-                      </a>
-                    );
-                  })}
-                </div>
               </div>
 
-              {/* Quick Links */}
+              {/* Navigation Links */}
               <div className="footer-section">
-                <h4>Quick Links</h4>
+                <h4>Navigation</h4>
                 <ul className="footer-links">
-                  {quickLinks.map((link, index) => (
-                    <li key={index} className="footer-link">
-                      <a href={link.href}>{link.label}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Services */}
-              <div className="footer-section">
-                <h4>Services</h4>
-                <ul className="footer-links">
-                  {services.map((service, index) => (
-                    <li key={index} className="footer-link">
-                      <a href={service.href}>{service.label}</a>
+                  {navItems.map((item) => (
+                    <li key={item.id} className="footer-link">
+                      <a onClick={() => handleNavClick(item.id)}>{item.label}</a>
+                      {item.subItems && (
+                        <div className="footer-submenu">
+                          {item.subItems.map((subItem) => (
+                            <div key={subItem.id} className="footer-submenu-item">
+                              <a onClick={() => handleNavClick(subItem.id)}>{subItem.label}</a>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -467,7 +455,6 @@ const services = [
                 <a href="#privacy" className="footer-bottom-link">Privacy Policy</a>
                 <a href="#terms" className="footer-bottom-link">Terms of Service</a>
                 <a href="#cookies" className="footer-bottom-link">Cookie Policy</a>
-                <a href="#sitemap" className="footer-bottom-link">Sitemap</a>
               </div>
             </div>
           </div>

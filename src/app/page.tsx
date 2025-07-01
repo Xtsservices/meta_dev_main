@@ -1,28 +1,30 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react'; // Add useEffect to your React import
 import Header from './components/Header';
 import Banner from './components/Banner';
-import HeroSection from './components/HeroSection';
+import HeroSection from './components/metahealth';
 import BrandsSection from './components/BrandsSection';
-import AbhyasaSection from './components/AbhyasaSection';
-import ABBrandsSection from './components/ABBrandsSection';
-// import ServicesSection from './components/ServicesSection';
+import Abhyasa from './components/abhyasa';
 import Footer from './components/Footer';
 import GovernmentIntegrations from './components/GovernmentIntegrations';
+import BrandsShowcase from './components/brands';
+import Contact from './components/Contact';
 
 export default function Home() {
+  // Add this useEffect hook
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header scrollToSection={(sectionId) => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })} />
-      <Banner/>  
-      <HeroSection scrollToSection={(sectionId) => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })} />
-      <BrandsSection />
-      <AbhyasaSection scrollToSection={function (sectionId: string): void {
-        throw new Error('Function not implemented.');
-      } }/>
-      <ABBrandsSection/>
-      {/* <ServicesSection /> */}
+      <Banner/>        
+      <BrandsShowcase/>
+      <HeroSection/>
+      <Abhyasa/>        
       <GovernmentIntegrations />
+      <Contact/>
       <Footer />
     </>
   );
