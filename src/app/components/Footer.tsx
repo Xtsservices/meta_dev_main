@@ -407,7 +407,7 @@ const Footer: React.FC = () => {
 
               {/* Navigation Links */}
               <div className="footer-section">
-                <h4>Navigation</h4>
+                <h4>Quick Links</h4>
                 <ul className="footer-links">
                   {navItems.map((item) => (
                     <li key={item.id} className="footer-link">

@@ -45,10 +45,10 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-bold text-gray-800 mb-2">Send us a message</h2>
-            <p className="text-gray-600 mb-6 text-sm">
-              If you have any work from me or any types of queries related to my tutorial, you can send me 
+            {/* <p className="text-gray-600 mb-6 text-sm">
+              If you have any work from me or any types of queries, you can send me 
               message from here. It's my pleasure to help you.
-            </p>
+            </p> */}
 
             <div className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
