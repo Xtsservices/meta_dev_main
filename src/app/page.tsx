@@ -8,7 +8,7 @@ import Abhyasa from './components/abhyasa';
 import Footer from './components/Footer';
 import GovernmentIntegrations from './components/GovernmentIntegrations';
 import BrandsShowcase from './components/brands';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton'; // Add this import
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
       <HeroSection/>
       <Abhyasa/>        
       <GovernmentIntegrations />
-      <Contact/>
+      {/* <Contact/> */}
       <Footer />
       <ScrollToTopButton /> {/* Add this component at the end */}
     </>
