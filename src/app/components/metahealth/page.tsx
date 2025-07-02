@@ -127,6 +127,8 @@ const MetaHealthPage = () => {
           margin: 0;
           position: relative;
           display: inline-block;
+          text-align: center;
+          width: 100%;
         }
 
         .company-name::after {
@@ -174,6 +176,7 @@ const MetaHealthPage = () => {
           -webkit-text-fill-color: transparent;
           position: relative;
           line-height: 1.2;
+          text-align: center;
         }
 
         .hero-title::after {
@@ -194,6 +197,7 @@ const MetaHealthPage = () => {
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.7;
+          text-align: center;
         }
 
         .section-title {
@@ -205,6 +209,7 @@ const MetaHealthPage = () => {
           position: relative;
           display: inline-block;
           padding-bottom: 10px;
+          width: 100%;
         }
 
         .section-title::after {
@@ -235,6 +240,7 @@ const MetaHealthPage = () => {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
           opacity: ${isVisible ? '1' : '0'};
           transform: ${isVisible ? 'translateY(0)' : 'translateY(50px)'};
+          text-align: center;
         }
 
         .about-section {
@@ -328,6 +334,7 @@ const MetaHealthPage = () => {
           margin-bottom: 1rem;
           color: #333;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .feature-card:hover .feature-title {
@@ -339,6 +346,7 @@ const MetaHealthPage = () => {
           font-size: 0.95rem;
           line-height: 1.6;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .feature-card:hover .feature-description {
@@ -393,6 +401,7 @@ const MetaHealthPage = () => {
           color: #03989e;
           margin-bottom: 0.5rem;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .stat-item:hover .stat-number {
@@ -404,6 +413,7 @@ const MetaHealthPage = () => {
           font-weight: 600;
           font-size: 1rem;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .stat-item:hover .stat-label {
@@ -528,6 +538,7 @@ const MetaHealthPage = () => {
       
       <div className="metahealth-container">
         <div className="content-wrapper">
+          <div className="logo-header">
             <div className="logo">
               <img
                 src="/metahealth-logo.png"
@@ -535,6 +546,8 @@ const MetaHealthPage = () => {
                 className="logo-image"
               />
             </div>
+            <h1 className="company-name">MetaHealth</h1>
+          </div>
 
           <div className="hero-section">
             <h1 className="hero-title">MetaHealth Platform</h1>

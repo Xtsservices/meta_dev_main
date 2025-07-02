@@ -100,17 +100,14 @@ const MetaDevPage = () => {
         }
 
         .logo {
-          width: 140px;
-          height: 140px;
+          width: 200px;
+          height: 200px;
           border-radius: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
           margin: 0 auto 1rem;
-          animation: logoFloat 4s ease-in-out infinite;
-          box-shadow: 0 10px 30px rgba(0, 100, 255, 0.2);
           transition: all 0.4s ease;
-          background: white;
         }
 
         .logo:hover {
@@ -132,6 +129,8 @@ const MetaDevPage = () => {
           margin: 0;
           position: relative;
           display: inline-block;
+          text-align: center;
+          width: 100%;
         }
 
         .company-name::after {
@@ -179,6 +178,7 @@ const MetaDevPage = () => {
           -webkit-text-fill-color: transparent;
           position: relative;
           line-height: 1.2;
+          text-align: center;
         }
 
         .hero-title::after {
@@ -199,6 +199,7 @@ const MetaDevPage = () => {
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.7;
+          text-align: center;
         }
 
         .section-title {
@@ -210,6 +211,7 @@ const MetaDevPage = () => {
           position: relative;
           display: inline-block;
           padding-bottom: 10px;
+          width: 100%;
         }
 
         .section-title::after {
@@ -240,6 +242,7 @@ const MetaDevPage = () => {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
           opacity: ${isVisible ? '1' : '0'};
           transform: ${isVisible ? 'translateY(0)' : 'translateY(50px)'};
+          text-align: center;
         }
 
         .about-section {
@@ -337,6 +340,7 @@ const MetaDevPage = () => {
           margin-bottom: 1rem;
           color: #333;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .feature-card:hover .feature-title {
@@ -348,6 +352,7 @@ const MetaDevPage = () => {
           font-size: 0.95rem;
           line-height: 1.6;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .feature-card:hover .feature-description {
@@ -402,6 +407,7 @@ const MetaDevPage = () => {
           color: #0064ff;
           margin-bottom: 0.5rem;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .stat-item:hover .stat-number {
@@ -413,6 +419,7 @@ const MetaDevPage = () => {
           font-weight: 600;
           font-size: 1rem;
           transition: all 0.3s ease;
+          text-align: center;
         }
 
         .stat-item:hover .stat-label {
@@ -434,6 +441,7 @@ const MetaDevPage = () => {
           transition: all 0.4s ease;
           position: relative;
           overflow: hidden;
+          text-align: center;
         }
 
         .industry-card:hover {
@@ -449,13 +457,16 @@ const MetaDevPage = () => {
           margin-bottom: 1rem;
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 0.8rem;
+          text-align: center;
         }
 
         .industry-description {
           color: #666;
           font-size: 0.95rem;
           line-height: 1.6;
+          text-align: center;
         }
 
         .scroll-to-top {
@@ -583,23 +594,23 @@ const MetaDevPage = () => {
           <div className="logo-header">
             <div className="logo">
               <img
-                src="/metadev-logo.png"
+                src="/Metadev.jpg"
                 alt="MetaDev Logo"
                 className="logo-image"
               />
             </div>
-            <h1 className="company-name">MetaDev</h1>
+            <h1 className="company-name">METADEV</h1>
           </div>
 
           <div className="hero-section">
             <h1 className="hero-title">Industry-Specific IT Solutions</h1>
             <p className="hero-description">
-              MetaDev empowers organizations across sectors with next-gen digital solutions designed to improve efficiency, agility, and impact.
+              METADEV empowers organizations across sectors with next-gen digital solutions designed to improve efficiency, agility, and impact.
             </p>
           </div>
 
           <div className="about-section" id="about-section">
-            <h2 className="section-title">About MetaDev</h2>
+            <h2 className="section-title">About METADEV</h2>
             <p className="section-description">
               We are an innovative IT company committed to transforming the digital landscape through cutting-edge technology and forward-thinking solutions. Our mission is to deliver smart, scalable, and secure digital experiences that empower businesses and communities alike.
             </p>
@@ -627,7 +638,7 @@ const MetaDevPage = () => {
           <div className="industries-section">
             <h2 className="section-title">Industries We Serve</h2>
             <p className="section-description">
-              MetaDev delivers tailored digital solutions across key industries to drive transformation and growth.
+              METADEV delivers tailored digital solutions across key industries to drive transformation and growth.
             </p>
             
             <div className="industry-grid">
@@ -648,21 +659,21 @@ const MetaDevPage = () => {
               <div className="industry-card">
                 <h3 className="industry-title"><Banknote size={24} /> Banking & Financial Services</h3>
                 <p className="industry-description">
-                  MetaDev enables end-to-end digital transformation for banks and capital markets. Our services include core banking modernization, digital onboarding, AI-powered virtual assistants, and cybersecurity frameworks.
+                  METADEV enables end-to-end digital transformation for banks and capital markets. Our services include core banking modernization, digital onboarding, AI-powered virtual assistants, and cybersecurity frameworks.
                 </p>
               </div>
               
               <div className="industry-card">
                 <h3 className="industry-title"><Scale size={24} /> Insurance</h3>
                 <p className="industry-description">
-                  MetaDev reimagines the insurance value chain with AI-driven claims processing, fraud detection systems, and customer-centric platforms that improve decision-making and streamline policy management.
+                  METADEV reimagines the insurance value chain with AI-driven claims processing, fraud detection systems, and customer-centric platforms that improve decision-making and streamline policy management.
                 </p>
               </div>
               
               <div className="industry-card">
                 <h3 className="industry-title"><Building size={24} /> Public Sector</h3>
                 <p className="industry-description">
-                  MetaDev accelerates e-governance by equipping government agencies with secure cloud infrastructure, data-driven policy platforms, and citizen service portals for improved transparency and service delivery.
+                  METADEV accelerates e-governance by equipping government agencies with secure cloud infrastructure, data-driven policy platforms, and citizen service portals for improved transparency and service delivery.
                 </p>
               </div>
             </div>
@@ -671,7 +682,7 @@ const MetaDevPage = () => {
           <div className="services-section" id="services">
             <h2 className="section-title">Our Services</h2>
             <p className="section-description">
-              At MetaDev, we empower businesses to evolve through cutting-edge digital infrastructure, intelligent cloud adoption, and transformative enterprise-grade solutions.
+              At METDADEV, we empower businesses to evolve through cutting-edge digital infrastructure, intelligent cloud adoption, and transformative enterprise-grade solutions.
             </p>
             
             <div className="features-grid">

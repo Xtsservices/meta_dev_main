@@ -11,35 +11,38 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isBrandsOpen, setIsBrandsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   const navItems = [
+    { label: "About", id: "about" },
+    { label: "Contact", id: "contact" },
     { label: "Home", id: "home" },
     {
-      label: "Services",
-      id: "services",
+      label: "Our Brands",
+      id: "brands",
       subItems: [
         { label: "MetaHealth", id: "metahealth" },
         { label: "Abhyasa", id: "abhyasa" },
-        { label: "MetaDev", id: "metadev" },
       ],
     },
-    { label: "Our Brands", id: "brands" },
+    {
+      label: "Services",
+      id: "services",
+      subItems: [        
+        { label: "MetaDev", id: "metadev" },
+        { label: "MetaHealth", id: "metahealth" },
+        { label: "Abhyasa", id: "abhyasa" },
+      ],
+    },
     { label: "Team", id: "team" },
-    { label: "About", id: "about" },
-    { label: "Contact", id: "contact" },
   ];
 
   const handleNavClick = (id: string) => {
     if (id === "metahealth" || id === "abhyasa" || id === "metadev") {
-      if (pathname === `/${id}`) {
-        document
-          .getElementById("services")
-          ?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        router.push(`/components/${id}#services`);
-      }
+      // Navigate directly to the respective pages
+      router.push(`/components/${id}`);
     } else if (id === "home") {
       if (pathname === "/") {
         window.scrollTo({
@@ -82,6 +85,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
     }
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+    setIsBrandsOpen(false);
   };
 
   const handleLogoClick = () => {
@@ -91,17 +95,25 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   const toggleServicesDropdown = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsServicesOpen(!isServicesOpen);
+    setIsBrandsOpen(false); // Close brands dropdown when services is opened
+  };
+
+  const toggleBrandsDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsBrandsOpen(!isBrandsOpen);
+    setIsServicesOpen(false); // Close services dropdown when brands is opened
   };
 
   useEffect(() => {
     const handleClickOutside = () => {
-      if (isServicesOpen) {
+      if (isServicesOpen || isBrandsOpen) {
         setIsServicesOpen(false);
+        setIsBrandsOpen(false);
       }
     };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, [isServicesOpen]);
+  }, [isServicesOpen, isBrandsOpen]);
 
   return (
     <>
@@ -198,8 +210,15 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           border-radius: 0.5rem;
           min-width: 200px;
           padding: 0.5rem 0;
-          display: ${isServicesOpen ? "block" : "none"};
           z-index: 100;
+        }
+
+        .dropdown-content.services {
+          display: ${isServicesOpen ? "block" : "none"};
+        }
+
+        .dropdown-content.brands {
+          display: ${isBrandsOpen ? "block" : "none"};
         }
 
         .dropdown-item {
@@ -208,6 +227,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
           text-decoration: none;
           display: block;
           transition: background-color 0.2s;
+          cursor: pointer;
         }
 
         .dropdown-item:hover {
@@ -276,7 +296,14 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
         .mobile-submenu {
           padding-left: 1rem;
           margin-top: 0.5rem;
+        }
+
+        .mobile-submenu.services {
           display: ${isServicesOpen ? "block" : "none"};
+        }
+
+        .mobile-submenu.brands {
+          display: ${isBrandsOpen ? "block" : "none"};
         }
 
         .mobile-submenu-item {
@@ -337,17 +364,18 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
                     <div key={item.id} className="dropdown">
                       <span
                         className="nav-item"
-                        onClick={toggleServicesDropdown}
+                        onClick={item.id === "services" ? toggleServicesDropdown : toggleBrandsDropdown}
                       >
                         {item.label}
                         <ChevronDown
                           size={16}
                           className={`transition-transform ${
-                            isServicesOpen ? "rotate-180" : ""
+                            (item.id === "services" && isServicesOpen) || 
+                            (item.id === "brands" && isBrandsOpen) ? "rotate-180" : ""
                           }`}
                         />
                       </span>
-                      <div className="dropdown-content">
+                      <div className={`dropdown-content ${item.id}`}>
                         {item.subItems.map((subItem) => (
                           <span
                             key={subItem.id}
@@ -389,8 +417,12 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
                     onClick={() => {
                       if (!item.subItems) {
                         handleNavClick(item.id);
-                      } else {
+                      } else if (item.id === "services") {
                         setIsServicesOpen(!isServicesOpen);
+                        setIsBrandsOpen(false);
+                      } else if (item.id === "brands") {
+                        setIsBrandsOpen(!isBrandsOpen);
+                        setIsServicesOpen(false);
                       }
                     }}
                   >
@@ -399,13 +431,14 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
                       <ChevronDown
                         size={16}
                         className={`transition-transform ${
-                          isServicesOpen ? "rotate-180" : ""
+                          (item.id === "services" && isServicesOpen) ||
+                          (item.id === "brands" && isBrandsOpen) ? "rotate-180" : ""
                         }`}
                       />
                     )}
                   </span>
                   {item.subItems && (
-                    <div className="mobile-submenu">
+                    <div className={`mobile-submenu ${item.id}`}>
                       {item.subItems.map((subItem) => (
                         <span
                           key={subItem.id}

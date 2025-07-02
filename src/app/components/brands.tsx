@@ -34,7 +34,7 @@ const BrandsShowcase = () => {
 
   // Marquee content about MetaDev
   const marqueeItems = [
-    "MetaDev - Digital Healthcare & Education Solutions",
+    "METADEV - Digital Healthcare & Education Solutions",
     "Transforming Lives Through Technology",
     "MetaHealth: Complete Healthcare Management",
     "Abhyasa: Modern Learning Platform",
@@ -45,11 +45,11 @@ const BrandsShowcase = () => {
     <>
       <style jsx>{`
         .showcase {
-          background: linear-gradient(135deg, rgba(248, 250, 252, 0.6) 0%, rgba(241, 245, 249, 0.4) 100%);
+          background: white;
           padding: 2.5rem 0;
           position: relative;
           overflow: hidden;
-          margin-top: -2rem;
+          margin-top: -41px;
           margin-bottom: -4rem;
           backdrop-filter: blur(10px);
         }
@@ -426,7 +426,7 @@ const BrandsShowcase = () => {
         <div className="showcase-container">
           {/* Section Header */}
           <div className="section-header">
-            <h2 className="section-title">MetaDev</h2>
+            <h2 className="section-title">METADEV</h2>
             <p className="section-subtitle">
               Empowering healthcare and education through innovative digital platforms
             </p>

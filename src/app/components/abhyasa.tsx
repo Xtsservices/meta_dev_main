@@ -168,7 +168,7 @@ const Abhyasa = () => {
               Revolutionize Learning
             </span>
             <br />
-            <span className="text-gray-700">with Abhyasa</span>
+            <span className="text-gray-700">with ABHYASA</span>
           </h1>
 
           {/* Subtitle */}
@@ -208,17 +208,7 @@ const Abhyasa = () => {
                 className="group-hover:translate-x-1 transition-transform duration-300"
               />
             </button>
-            <button
-              className="group px-5 py-2 sm:px-6 sm:py-3 bg-white border-2 text-gray-700 font-medium rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 shadow-sm text-sm sm:text-base"
-              style={{ borderColor: "#c0c0c0" }}
-            >
-              <span>Contact Us</span>
-              <Target
-                size={14}
-                className="group-hover:rotate-12 transition-transform duration-300"
-                style={{ color: "#004aad" }}
-              />
-            </button>
+           
           </div>
         </div>
 
@@ -235,7 +225,7 @@ const Abhyasa = () => {
           {[
             {
               icon: BookOpen,
-              title: "About Abhyasa",
+              title: "About ABHAYASA",
               description:
                 "Discover our mission to make quality education accessible to everyone",
             },

@@ -29,7 +29,7 @@ const HeroSection = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -65,11 +65,12 @@ const HeroSection = () => {
         .hero-section {
           position: relative;
           min-height: 100vh;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          background: white;
           overflow: hidden;
           display: flex;
           align-items: center;
           padding: 2rem 0;
+          margin
         }
 
         .hero-section::before {
@@ -155,7 +156,9 @@ const HeroSection = () => {
 
         .scroll-scale-up {
           opacity: ${isInView ? "1" : "0"};
-          transform: ${isInView ? "scale(1) translateY(0)" : "scale(0.8) translateY(30px)"};
+          transform: ${
+            isInView ? "scale(1) translateY(0)" : "scale(0.8) translateY(30px)"
+          };
           transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -165,19 +168,20 @@ const HeroSection = () => {
           opacity: ${isVisible ? "1" : "0"};
           transform: ${isVisible ? "translateY(0)" : "translateY(-20px)"};
           transition: all 0.8s ease 0.1s;
+          background
         }
 
-        .logo {
-          width: 350px;
-          height: 250px;
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 1rem;
-          animation: logoFloat 3s ease-in-out infinite;
-          margin-bottom: -5rem;
-        }
+       .logo {
+  width: 350px;
+  height: 250px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  animation: logoFloat 3s ease-in-out infinite;
+  margin-bottom: -5rem;
+}
 
         .logo-image {
           max-width: 100%;
@@ -391,6 +395,7 @@ const HeroSection = () => {
             width: 280px;
             height: 200px;
             margin-bottom: -3rem;
+            
           }
         }
 
@@ -526,7 +531,11 @@ const HeroSection = () => {
         }
       `}</style>
 
-      <section className="hero-section" id="metahealth-section" ref={sectionRef}>
+      <section
+        className="hero-section"
+        id="metahealth-section"
+        ref={sectionRef}
+      >
         <div className="hero-container">
           <div className="logo-section scroll-scale-up">
             <div className="logo">
@@ -554,7 +563,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <h1 className="hero-title scroll-fade-up-delay-1">Transform Healthcare with Technology</h1>
+            <h1 className="hero-title scroll-fade-up-delay-1">
+              Transform Healthcare with Technology
+            </h1>
 
             <p className="hero-subtitle scroll-fade-up-delay-2">
               Modern patient care and medical data management through innovative
@@ -568,9 +579,7 @@ const HeroSection = () => {
               >
                 Learn More <ArrowRight size={16} />
               </button>
-              <button className="hero-button secondary-button">
-                Contact Us <Target size={16} />
-              </button>
+             
             </div>
 
             <div className="features-grid scroll-fade-up-delay-4">

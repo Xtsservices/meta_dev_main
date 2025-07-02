@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react'; // Add useEffect to your React import
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import HeroSection from './components/metahealth';
@@ -9,9 +9,9 @@ import Footer from './components/Footer';
 import GovernmentIntegrations from './components/GovernmentIntegrations';
 import BrandsShowcase from './components/brands';
 import Contact from './components/Contact';
+import ScrollToTopButton from './components/ScrollToTopButton'; // Add this import
 
 export default function Home() {
-  // Add this useEffect hook
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -26,6 +26,7 @@ export default function Home() {
       <GovernmentIntegrations />
       <Contact/>
       <Footer />
+      <ScrollToTopButton /> {/* Add this component at the end */}
     </>
   );
 }

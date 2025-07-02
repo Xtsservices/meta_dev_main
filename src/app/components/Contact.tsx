@@ -10,14 +10,14 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     // Handle form submission here
@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-r from-blue-50 to-cyan-50 py-8 ">
+    <section className="w-full bg-gradient-to-r from-blue-50 to-cyan-50 py-2"> {/* Changed from py-4 to py-2 */}
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Contact Info */}
