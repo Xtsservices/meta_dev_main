@@ -8,12 +8,12 @@ const TeamPage = () => {
     {
       name: "KISHORE KODALI",
       role: "Director",
-      image: "/kishore-kodali.jpeg"
+      image: "/kishore-kodali.png"
     },
     {
       name: "SAMPATH KUMAR GRANDHI",
       role: "Director",
-      image: "/sampath-kumar.jpeg"
+      image: "/sampath-kumar.png"
     }
   ];
 
